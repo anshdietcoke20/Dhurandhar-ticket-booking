@@ -87,7 +87,7 @@
 }
       async function run() {
         const tbl = document.getElementById("tbl");
-        const res = await fetch("/seats");
+        const res = await fetch("https://book-my-ticket.onrender.com/seats");
         const resarray = await res.json();
         const j = resarray.sort((a, b) => a.id - b.id);
         let tr;
@@ -131,7 +131,7 @@ if (!savedToken) {
   alert("Please paste your token first!");
   return;
 }
-const res = await fetch(`/${id}/${name}`, {
+const res = await fetch(`https://book-my-ticket.onrender.com/${id}/${name}`, {
   method: "PUT",
   headers: { "Authorization": "Bearer " + savedToken }
 });
